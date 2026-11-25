@@ -12,11 +12,11 @@ export interface OfficePhone {
 }
 
 export interface OfficeLocation {
-  id: 'ba' | 'mg';
+  id: 'ba';
   name: string;
   streetAddress: string;
   city: string;
-  state: 'BA' | 'MG';
+  state: 'BA';
   postalCode: string;
   country: 'BR';
   mapUrl: string;
@@ -103,28 +103,6 @@ export const OFFICES: OfficeLocation[] = [
         display: '(71) 98782-2230',
         tel: 'tel:+5571987822230',
         e164: '+55-71-98782-2230',
-      },
-    ],
-  },
-  {
-    id: 'mg',
-    name: 'Sete Lagoas, MG',
-    streetAddress: 'Rua Dr. Gabriel Passos, 355',
-    city: 'Sete Lagoas',
-    state: 'MG',
-    postalCode: '35700-403',
-    country: 'BR',
-    mapUrl:
-      'https://wego.here.com/directions/mix/Rua-Doutor-Gabriel-Passos,-355,-Sete-Lagoas,-Sete-Lagoas-MG,-35700-403,-Brasil:loc-dmVyc2lvbj0xO3RpdGxlPVJ1YStEb3V0b3IrR2FicmllbCtQYXNzb3MlMkMrMzU1O2xhbmc9cHQ7bGF0PS0xOS40NTI4MTAyODc0NzU1ODY7bG9uPS00NC4yNTQyNjg2NDYyNDAyMzQ7c3RyZWV0PVJ1YStEb3V0b3IrR2FicmllbCtQYXNzb3M7aG91c2U9MzU1O2NpdHk9U2V0ZStMYWdvYXM7cG9zdGFsQ29kZT0zNTcwMC00MDM7Y291bnRyeT1CUkE7ZGlzdHJpY3Q9U2V0ZStMYWdvYXM7c3RhdGU9TWluYXMrR2VyYWlzO3N0YXRlQ29kZT1NRztjYXRlZ29yeUlkPWJ1aWxkaW5nO3NvdXJjZVN5c3RlbT1pbnRlcm5hbDtubGF0PS0xOS40NTI4NTAzNDE3OTY4NzU7bmxvbj0tNDQuMjU0MTgwOTA4MjAzMTI1O3Bkc0NhdGVnb3J5SWQ9OTAwLTkzMDAtMDAwMA?map=-19.45281,-44.25427,15,normal&fb_locale=pt_BR',
-    geo: {
-      latitude: -19.452810287475586,
-      longitude: -44.254268646240234,
-    },
-    phones: [
-      {
-        display: '(31) 99214-1411',
-        tel: 'tel:+5531992141411',
-        e164: '+55-31-99214-1411',
       },
     ],
   },

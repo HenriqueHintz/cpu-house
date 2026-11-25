@@ -135,9 +135,8 @@ export const PRODUCTS = [
 
 export const TEAM = [
   { name: 'Cristiano Furtado', role: 'Chief Executive Officer (CEO)', photo: '/images/team-cristiano-furtado.jpg' },
-  { name: 'Christian Tosta', role: 'Chief Information Officer (CIO)' },
-  { name: 'Davi Furtado', role: 'Analista de Suporte' },
-  { name: 'Moisés Dantas', role: 'Analista de Suporte' },
+  { name: 'Davi Furtado', role: 'Analista de Suporte', photo: '/images/team-davi-furtado.jpg' },
+  { name: 'Moisés Dantas', role: 'Analista de Suporte', photo: '/images/team-moises-dantas.jpg' },
 ].map((m) => ({
   ...m,
   linkedin: `https://www.linkedin.com/search/results/people/?keywords=${encodeURIComponent(`${m.name} CPU House`)}`,
@@ -145,7 +144,7 @@ export const TEAM = [
 
 export const STATS = [
   { label: 'Desde', to: 2007, suffix: '', note: 'fundação em 1º de março' },
-  { label: 'Estados atendidos', to: 2, suffix: '', note: 'Bahia e Minas Gerais' },
+  { label: 'Anos de experiência', to: 18, suffix: '+', note: 'Lauro de Freitas, Bahia' },
   { label: 'Open source', to: 100, suffix: '%', note: 'tecnologias consagradas' },
 ];
 

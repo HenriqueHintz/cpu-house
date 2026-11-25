@@ -27,7 +27,7 @@ const FAQ = [
   },
   {
     q: 'Onde a CPU House atende?',
-    a: 'Temos escritórios em Lauro de Freitas (BA) e Sete Lagoas (MG).',
+    a: 'Nossa sede fica em Lauro de Freitas (BA), com atendimento presencial na região e suporte remoto para todo o Brasil.',
   },
 ];
 

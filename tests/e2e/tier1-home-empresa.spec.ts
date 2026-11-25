@@ -91,37 +91,41 @@ test.describe('Tier 1 — Feature 4: Reusable UI & Motion Primitives', () => {
     await expect(categoryBtn).toHaveAttribute('aria-expanded', initialExpanded!);
   });
 
-  test('T1-F04-04: TeamCard renders circular avatars, Cristiano real photo, and grayscale-to-color styling', async ({
+  test('T1-F04-04: TeamCard renders circular full-color photos for Cristiano, Davi, and Moisés', async ({
     page,
   }) => {
     await page.goto('/');
 
-    const teamSection = page
-      .locator('section')
-      .filter({ hasText: /Nosso patrimônio intelectual/i })
-      .first();
+    const teamSection = page.locator('#equipe');
     await teamSection.scrollIntoViewIfNeeded();
 
-    const cristianoImg = teamSection.locator('img[alt*="Cristiano" i]').first();
-    await expect(cristianoImg).toBeVisible();
+    for (const member of ['Cristiano', 'Davi', 'Moisés']) {
+      const memberImg = teamSection.locator(`img[alt*="${member}" i]`).first();
+      await memberImg.scrollIntoViewIfNeeded();
+      await expect(memberImg).toBeVisible();
+      await expect
+        .poll(async () =>
+          memberImg.evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth > 0)
+        )
+        .toBe(true);
 
-    const imgStats = await cristianoImg.evaluate((img: HTMLImageElement) => {
-      const cs = getComputedStyle(img);
-      return {
-        complete: img.complete,
-        naturalWidth: img.naturalWidth,
-        borderRadius: cs.borderRadius,
-        filter: cs.filter,
-        parentRadius: img.parentElement ? getComputedStyle(img.parentElement).borderRadius : '',
-      };
-    });
+      const imgStats = await memberImg.evaluate((img: HTMLImageElement) => {
+        const cs = getComputedStyle(img);
+        return {
+          complete: img.complete,
+          naturalWidth: img.naturalWidth,
+          borderRadius: cs.borderRadius,
+          filter: cs.filter,
+          parentRadius: img.parentElement ? getComputedStyle(img.parentElement).borderRadius : '',
+        };
+      });
 
-    expect(imgStats.complete).toBe(true);
-    expect(imgStats.naturalWidth).toBeGreaterThan(0);
-    expect(imgStats.borderRadius !== '0px' || imgStats.parentRadius !== '0px').toBe(true);
-    expect(imgStats.filter).toMatch(/grayscale/i);
+      expect(imgStats.complete).toBe(true);
+      expect(imgStats.naturalWidth).toBeGreaterThan(0);
+      expect(imgStats.borderRadius !== '0px' || imgStats.parentRadius !== '0px').toBe(true);
+      expect(imgStats.filter).not.toMatch(/grayscale/i);
+    }
 
-    await cristianoImg.hover();
     await expectAllImagesValid(page);
   });
 
@@ -391,20 +395,18 @@ test.describe('Tier 1 — Feature 6: Home Page (/)', () => {
     page,
   }) => {
     await page.goto('/');
-    const section = page
-      .locator('section')
-      .filter({ hasText: /Nosso patrimônio intelectual/i })
-      .first();
+    const section = page.locator('#equipe');
     await expect(section).toBeVisible();
     await expect(section.locator('a[href="/empresa"]').first()).toBeVisible();
 
-    for (const member of ['Cristiano Furtado', 'Christian Tosta', 'Davi Furtado', 'Moisés Dantas']) {
+    for (const member of ['Cristiano Furtado', 'Davi Furtado', 'Moisés Dantas']) {
       await expect(section).toContainText(member);
     }
 
-    await expect(section.locator('a[href*="cristiano-furtado-425780b5"]')).toHaveCount(1);
-    await expect(section.locator('a[href*="christian-tosta-24399049"]')).toHaveCount(1);
-    await expect(section.locator('a[href*="moshe-dantas"]')).toHaveCount(1);
+    await expect(section).not.toContainText('Christian Tosta');
+    await expect(section.locator('a[href*="Cristiano"]')).toHaveCount(1);
+    await expect(section.locator('a[href*="Davi"]')).toHaveCount(1);
+    await expect(section.locator('a[href*="Mois"]')).toHaveCount(1);
     await expect(section.locator('a[href="https://br.linkedin.com/in/"]')).toHaveCount(0);
 
     await expect(page.locator('body')).not.toContainText('Acelere o rendimento no trabalho');

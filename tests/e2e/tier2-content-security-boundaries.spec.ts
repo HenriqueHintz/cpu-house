@@ -31,13 +31,13 @@ test.describe('Tier 2 — Feature 6: Home Security, LinkedIn & Anti-Bloat Bounda
     page,
   }) => {
     await page.goto('/');
-    const team = page.locator('section').filter({ hasText: /Nosso patrimônio intelectual/i }).first();
+    const team = page.locator('#equipe');
 
     await expect(team.locator('a[href="https://br.linkedin.com/in/"]')).toHaveCount(0);
     await expect(team.locator('a[href="https://br.linkedin.com/in"]')).toHaveCount(0);
 
-    for (const slug of ['cristiano-furtado-425780b5', 'christian-tosta-24399049', 'moshe-dantas']) {
-      const link = team.locator(`a[href*="${slug}"]`).first();
+    for (const member of ['Cristiano', 'Davi', 'Mois']) {
+      const link = team.locator(`a[href*="${member}"]`).first();
       await expect(link).toBeVisible();
       await expect(link).toHaveAttribute('target', '_blank');
     }

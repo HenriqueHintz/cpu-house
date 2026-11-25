@@ -80,8 +80,8 @@ export default function HomePage() {
             const srSummary =
               s.to === 2007
                 ? 'Desde 2007'
-                : s.to === 2
-                  ? '2 estados atendidos'
+                : s.to === 18
+                  ? '18+ anos de mercado'
                   : '100% open source';
 
             return (
@@ -110,7 +110,7 @@ export default function HomePage() {
         title="Nosso patrimônio intelectual"
         intro="O nosso time é formado por profissionais experientes e inteirados das tendências do mercado de tecnologia, com conhecimentos que vão da gestão tecnológica a recursos técnicos avançados."
       >
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 sm:grid-cols-3">
           {TEAM.map((m, i) => (
             <Reveal key={m.name} delay={i * 0.05}>
               <TeamCard {...m} />

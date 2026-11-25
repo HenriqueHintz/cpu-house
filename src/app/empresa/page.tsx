@@ -54,7 +54,7 @@ export default function EmpresaPage() {
       <Section
         eyebrow="Comunidade Open Source"
         title="Presença ativa na comunidade GNU"
-        intro="A CPU House esteve presente nos mais importantes eventos de tecnologia, representada por seu CEO Cristiano Furtado e pelo CIO Christian Tosta, com portfólio extenso em gestão de TI e soluções em Software Livre."
+        intro="A CPU House esteve presente nos mais importantes eventos de tecnologia, representada por seu CEO Cristiano Furtado, com portfólio extenso em gestão de TI e soluções em Software Livre."
       >
         <Reveal className="flex flex-wrap gap-3">
           {OPEN_SOURCE.map((item) =>

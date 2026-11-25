@@ -8,7 +8,7 @@ import { WHATSAPP } from '@/lib/data/content';
 export const metadata: Metadata = {
   title: 'Contato',
   description:
-    'Fale com a CPU House: escritórios em Lauro de Freitas (BA) e Sete Lagoas (MG). Agende uma consultoria pelo WhatsApp.',
+    'Fale com a CPU House em Lauro de Freitas (BA). Agende uma consultoria pelo WhatsApp.',
   alternates: { canonical: '/contato' },
 };
 
@@ -25,7 +25,7 @@ export default function ContatoPage() {
         </ButtonLink>
       </PageHero>
       <Section>
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid max-w-2xl gap-6">
           {OFFICES.map((o, i) => (
             <Reveal key={o.id} delay={i * 0.06}>
               <Card className="justify-between">

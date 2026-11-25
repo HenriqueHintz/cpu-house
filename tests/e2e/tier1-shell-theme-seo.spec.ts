@@ -260,8 +260,8 @@ test.describe('Tier 1 — Feature 2: Env Config, SEO Plumbing & 301 Redirect', (
     expect(serialized).toMatch(/LocalBusiness/);
     expect(serialized).toContain('42700-000');
     expect(serialized).toMatch(/Estrada do Coco/i);
-    expect(serialized).toContain('35700-403');
-    expect(serialized).toMatch(/Gabriel Passos/i);
+    expect(serialized).not.toContain('35700-403');
+    expect(serialized).not.toMatch(/Sete Lagoas/i);
 
     for (const block of rawScripts) {
       expect(() => JSON.parse(block)).not.toThrow();
@@ -380,9 +380,8 @@ test.describe('Tier 1 — Feature 3: Global Shell (Navbar, Footer, WhatsAppFloat
       await expect(footer).toContainText(EXPECTED_OFFICES.ba.phonePrimary);
       await expect(footer).toContainText(EXPECTED_OFFICES.ba.phoneSecondary);
 
-      await expect(footer).toContainText(EXPECTED_OFFICES.mg.street);
-      await expect(footer).toContainText(EXPECTED_OFFICES.mg.cep);
-      await expect(footer).toContainText(EXPECTED_OFFICES.mg.phonePrimary);
+      await expect(footer).not.toContainText('Sete Lagoas');
+      await expect(footer).not.toContainText('35700-403');
 
       await expect(
         footer.locator('a[href*="fb.com/cpuhouse"], a[href*="facebook.com/cpuhouse"]').first()

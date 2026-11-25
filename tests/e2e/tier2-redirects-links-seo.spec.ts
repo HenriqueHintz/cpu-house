@@ -158,9 +158,8 @@ test.describe('Tier 2 — Feature 2: Trailing-Slash 301s, SEO & Env Plumbing', (
     expect(jsonString).toContain('Organization');
     expect(jsonString).toContain('LocalBusiness');
     expect(jsonString).toContain(EXPECTED_OFFICES.ba.cep);
-    expect(jsonString).toContain(EXPECTED_OFFICES.mg.cep);
     expect(jsonString).toMatch(/Lauro de Freitas/i);
-    expect(jsonString).toMatch(/Sete Lagoas/i);
+    expect(jsonString).not.toMatch(/Sete Lagoas/i);
   });
 });
 

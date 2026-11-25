@@ -270,7 +270,7 @@ export function TeamCard({
               alt={`Foto de ${name}, ${role} da CPU House`}
               width={112}
               height={112}
-              className="h-full w-full object-cover object-top grayscale transition-[filter,transform] duration-300 group-hover/card:scale-[1.03] group-hover/card:grayscale-0"
+              className="h-full w-full object-cover object-top transition-transform duration-300 group-hover/card:scale-[1.03]"
             />
           ) : (
             <span
