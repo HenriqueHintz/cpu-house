@@ -28,13 +28,14 @@ export function Hero() {
           <WordReveal
             as="h1"
             immediate
-            text="Infraestrutura de TI segura, estável e sem surpresas."
+            text="Infraestrutura de TI blindada para sua empresa nunca parar."
             className="mt-5 text-[34px] font-bold leading-[1.06] tracking-[-0.03em] text-foreground sm:text-5xl lg:text-[54px]"
           />
 
           <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Servidores, segurança, backup em nuvem e suporte pró-ativo com tecnologias open source
-            consagradas, para sua equipe produzir mais e parar menos.
+            Servidores, segurança de rede, backup em nuvem (LGPD) e suporte pró-ativo com
+            tecnologias open source consagradas — menos paradas, custo previsível e equipe 100%
+            produtiva.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-x-7 gap-y-4">

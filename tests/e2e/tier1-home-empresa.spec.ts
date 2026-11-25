@@ -302,11 +302,11 @@ test.describe('Tier 1 — Feature 6: Home Page (/)', () => {
 
     await expect(page.getByText(/CONSULTORIA E SOLUÇÕES EM TI\s*·\s*DESDE 2007/i).first()).toBeVisible();
     await expect(page.getByRole('heading', { level: 1 })).toHaveText(
-      'Infraestrutura de TI segura, estável e sem surpresas.'
+      'Infraestrutura de TI blindada para sua empresa nunca parar.'
     );
     await expect(
       page.getByText(
-        'Servidores, segurança, backup em nuvem e suporte pró-ativo com tecnologias open source consagradas, para sua equipe produzir mais e parar menos.'
+        'Servidores, segurança de rede, backup em nuvem (LGPD) e suporte pró-ativo com tecnologias open source consagradas — menos paradas, custo previsível e equipe 100% produtiva.'
       )
     ).toBeVisible();
 

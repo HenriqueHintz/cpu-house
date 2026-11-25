@@ -17,7 +17,7 @@ test.describe('Tier 4 — Real-World Corporate Buyer Journeys', () => {
     await page.goto('/');
 
     await expect(page.getByRole('heading', { level: 1 })).toContainText(
-      'Infraestrutura de TI segura, estável e sem surpresas.'
+      'Infraestrutura de TI blindada para sua empresa nunca parar.'
     );
 
     await page.locator('a[href="/servicos/preventivas"]').first().click();

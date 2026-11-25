@@ -69,7 +69,7 @@ export function WordReveal({
           <span data-word className="inline-block will-change-transform">
             {word}
           </span>
-          {idx < words.length - 1 ? '\u00A0' : ''}
+          {idx < words.length - 1 ? ' ' : ''}
         </span>
       ))}
     </Tag>
