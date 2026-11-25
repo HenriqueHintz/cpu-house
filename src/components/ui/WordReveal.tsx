@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef } from 'react';
+import { Fragment, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
@@ -65,12 +65,14 @@ export function WordReveal({
   return (
     <Tag ref={headingRef} className={className}>
       {words.map((word, idx) => (
-        <span key={`${word}-${idx}`} className="inline-block overflow-hidden align-bottom">
-          <span data-word className="inline-block will-change-transform">
-            {word}
+        <Fragment key={`${word}-${idx}`}>
+          <span className="inline-block overflow-hidden align-bottom">
+            <span data-word className="inline-block will-change-transform">
+              {word}
+            </span>
           </span>
           {idx < words.length - 1 ? ' ' : ''}
-        </span>
+        </Fragment>
       ))}
     </Tag>
   );
