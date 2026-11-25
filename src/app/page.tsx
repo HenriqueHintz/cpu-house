@@ -74,8 +74,8 @@ export default function HomePage() {
 
       <SolutionsShowcase />
 
-      <Section id="numeros" className="border-y border-border/80 bg-background bg-tech-dots !py-16 md:!py-24">
-        <div className="grid gap-8 rounded-2xl border border-border bg-surface p-8 shadow-xs sm:grid-cols-3 sm:divide-x sm:divide-border sm:gap-0 sm:p-10">
+      <Section id="numeros" className="border-y border-border bg-white !py-12 md:!py-16">
+        <div className="grid gap-8 rounded-2xl border border-border bg-background p-8 sm:grid-cols-3 sm:divide-x sm:divide-border sm:gap-0 sm:p-10">
           {STATS.map((s, idx) => {
             const srSummary =
               s.to === 2007

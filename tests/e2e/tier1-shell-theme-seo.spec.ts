@@ -36,8 +36,8 @@ test.describe('Tier 1 — Feature 1: Visual Theme, Tokens & Typography', () => {
     });
 
     expect(themeInfo.hasDarkClass).toBe(false);
-    expect(['rgb(214, 230, 242)', 'rgb(255, 255, 255)']).toContain(themeInfo.bodyBg);
-    expect(themeInfo.bodyColor).toBe('rgb(9, 30, 44)');
+    expect(['rgb(248, 250, 252)', 'rgb(255, 255, 255)']).toContain(themeInfo.bodyBg);
+    expect(themeInfo.bodyColor).toBe('rgb(15, 23, 42)');
     if (themeInfo.brandToken) {
       expect(themeInfo.brandToken.toLowerCase()).toContain('0b4f6c');
     }
@@ -65,8 +65,8 @@ test.describe('Tier 1 — Feature 1: Visual Theme, Tokens & Typography', () => {
       };
     });
 
-    expect(['rgb(214, 230, 242)', 'rgb(255, 255, 255)']).toContain(lightMetrics.bg);
-    expect(lightMetrics.fg).toBe('rgb(9, 30, 44)');
+    expect(['rgb(248, 250, 252)', 'rgb(255, 255, 255)']).toContain(lightMetrics.bg);
+    expect(lightMetrics.fg).toBe('rgb(15, 23, 42)');
   });
 
   test('T1-F01-03: geometric sans body typography and mono technical eyebrow label', async ({
@@ -363,7 +363,7 @@ test.describe('Tier 1 — Feature 3: Global Shell (Navbar, Footer, WhatsAppFloat
     expect(await isDarkThemeActive(page)).toBe(false);
     await expect
       .poll(async () => page.evaluate(() => getComputedStyle(document.body).backgroundColor))
-      .toBe('rgb(214, 230, 242)');
+      .toBe('rgb(248, 250, 252)');
   });
 
   test('T1-F03-04: footer renders BA & MG offices, phones, social links, and Einstein quote', async ({

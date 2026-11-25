@@ -19,7 +19,7 @@ test.describe('Tier 2 — Feature 1 & 3: Light-Only Theme, Typography, Contrast 
     expect(await isDarkThemeActive(page)).toBe(false);
     await expect
       .poll(async () => page.evaluate(() => getComputedStyle(document.body).backgroundColor))
-      .toBe('rgb(214, 230, 242)');
+      .toBe('rgb(248, 250, 252)');
   });
 
   test('T2-F01-02: light mode remains active across multi-route client Link navigation', async ({

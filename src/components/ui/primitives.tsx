@@ -130,7 +130,7 @@ export function Section({
   return (
     <section
       id={id}
-      className={`flex min-h-[calc(100svh-72px)] flex-col justify-center py-16 md:py-20 ${toneClass} ${className}`}
+      className={`py-16 md:py-22 ${toneClass} ${className}`}
     >
       <div className="mx-auto w-full max-w-[1200px] px-4 sm:px-6 lg:px-8">
         {(eyebrow || title || intro) && (
@@ -168,9 +168,16 @@ export function PageHero({
   children?: ReactNode;
 }) {
   return (
-    <header className="relative flex min-h-[60svh] items-center overflow-hidden border-b border-border bg-gradient-to-b from-[#CBE0EE] via-background to-[#C3DAEA]">
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-tech-grid" />
-      <div className="relative mx-auto w-full max-w-[1200px] px-4 py-16 sm:px-6 md:py-20 lg:px-8">
+    <header className="relative overflow-hidden border-b border-border bg-white">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            'radial-gradient(560px circle at 85% 20%, rgba(14, 165, 233, 0.08), transparent 70%), linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%)',
+        }}
+      />
+      <div className="relative mx-auto w-full max-w-[1200px] px-4 py-14 sm:px-6 md:py-20 lg:px-8">
         <Eyebrow>{eyebrow}</Eyebrow>
         <WordReveal
           as="h1"
@@ -199,9 +206,9 @@ export function CtaBlock({
   href: string;
 }) {
   return (
-    <section className="flex min-h-[70svh] flex-col justify-center bg-background py-16 md:py-20">
+    <section className="bg-background py-14 md:py-20">
       <div className="mx-auto w-full max-w-[1200px] px-4 sm:px-6 lg:px-8">
-        <Reveal className="relative overflow-hidden rounded-2xl border border-[#164E6B] bg-petroleum px-6 py-14 text-center text-white shadow-[0_24px_60px_-24px_rgba(7,40,57,0.6)] sm:px-12 md:py-20">
+        <Reveal className="relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 px-6 py-12 text-center text-white shadow-[0_24px_60px_-24px_rgba(15,23,42,0.35)] sm:px-12 md:py-16">
           <div
             aria-hidden="true"
             className="pointer-events-none absolute inset-0 opacity-30"

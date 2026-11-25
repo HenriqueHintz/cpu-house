@@ -20,7 +20,7 @@ export function SolutionsShowcase() {
   return (
     <section
       id="solucoes"
-      className="relative flex min-h-[calc(100svh-72px)] flex-col justify-center overflow-hidden bg-petroleum py-16 md:py-20"
+      className="relative overflow-hidden bg-petroleum py-16 md:py-22"
     >
       <div
         aria-hidden="true"
