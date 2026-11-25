@@ -60,7 +60,7 @@ export function PricingTable({
               <col key={c.key} style={{ width: colWidth }} />
             ))}
           </colgroup>
-          <thead>
+          <thead className="sticky top-[72px] z-10">
             <tr>
               <th
                 scope="col"

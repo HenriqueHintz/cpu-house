@@ -277,6 +277,7 @@ export function TeamCard({
               alt={`Foto de ${name}, ${role} da CPU House`}
               width={112}
               height={112}
+              loading="eager"
               className="h-full w-full object-cover object-top transition-transform duration-300 group-hover/card:scale-[1.03]"
             />
           ) : (

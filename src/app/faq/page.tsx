@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
-import { ChevronDown } from 'lucide-react';
+import { FaqAccordion } from '@/components/faq/FaqAccordion';
 import { PageHero, Section } from '@/components/ui/primitives';
 
 export const metadata: Metadata = {
   title: 'Perguntas frequentes',
-  description: 'Respostas rápidas sobre preventivas corporativas, backup, Área do Cliente e atendimento da CPU House.',
+  description:
+    'Respostas rápidas sobre preventivas corporativas, backup, Área do Cliente e atendimento da CPU House.',
   alternates: { canonical: '/faq' },
 };
 
@@ -36,21 +37,7 @@ export default function FaqPage() {
     <>
       <PageHero eyebrow="FAQ" title="Perguntas frequentes" />
       <Section>
-        <div className="max-w-3xl divide-y divide-border rounded-2xl border border-border bg-surface">
-          {FAQ.map((item) => (
-            <details key={item.q} className="group p-6">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-medium text-foreground">
-                {item.q}
-                <ChevronDown
-                  className="h-5 w-5 shrink-0 text-muted-foreground transition-transform group-open:rotate-180"
-                  strokeWidth={1.5}
-                  aria-hidden="true"
-                />
-              </summary>
-              <p className="mt-3 leading-relaxed text-muted-foreground">{item.a}</p>
-            </details>
-          ))}
-        </div>
+        <FaqAccordion items={FAQ} />
       </Section>
     </>
   );

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { Check, HardDrive, ShieldCheck } from 'lucide-react';
 import { Reveal } from '@/components/ui/Reveal';
 import { BrowserMockup, Card, CtaBlock, PageHero, Section } from '@/components/ui/primitives';
@@ -104,6 +105,20 @@ export default function PreventivasPage() {
         title="Checklist dos ativos da sua rede"
         intro="A Preventiva Corporativa levanta os dados do parque computacional e compara os resultados com uma base de fatores de risco. Nossos técnicos criam um checklist detalhado sobre:"
       >
+        <Reveal className="mb-8">
+          <div className="overflow-hidden rounded-3xl border border-border bg-[#F4F7FB] p-3 shadow-xs">
+            <Image
+              src="/images/servicos-datacenter.webp"
+              alt="Racks de servidores corporativos inspecionados na rotina de manutenção preventiva da CPU House"
+              width={1280}
+              height={714}
+              priority
+              sizes="(max-width: 1200px) 94vw, 1140px"
+              className="max-h-[420px] w-full rounded-2xl object-cover"
+            />
+          </div>
+        </Reveal>
+
         <ul className="grid gap-4 sm:grid-cols-2">
           {PREVENTIVA_ASSETS.map((item, i) => (
             <Reveal

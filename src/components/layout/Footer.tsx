@@ -27,6 +27,7 @@ export function Footer() {
                   alt={COMPANY.logo.alt}
                   width={44}
                   height={44}
+                  loading="eager"
                   className="h-full w-full scale-[1.06] object-cover"
                 />
               </span>

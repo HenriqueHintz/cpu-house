@@ -57,14 +57,12 @@ export default function MailhostPage() {
         title="Compare os planos"
         intro="Valores sob consulta. Cada categoria pode ser recolhida para facilitar a leitura."
       >
-        <Reveal>
-          <PricingTable
-            caption="Comparativo de recursos dos planos Starter, Standard, Advanced e Hosted do servidor de e-mails"
-            columns={COLUMNS}
-            categories={MAILHOST_CATEGORIES}
-            collapsible
-          />
-        </Reveal>
+        <PricingTable
+          caption="Comparativo de recursos dos planos Starter, Standard, Advanced e Hosted do servidor de e-mails"
+          columns={COLUMNS}
+          categories={MAILHOST_CATEGORIES}
+          collapsible
+        />
         <p className="mt-6 max-w-3xl text-muted-foreground">
           <span className="font-mono text-xs uppercase tracking-wider text-brand-ink">{'// Escalabilidade — '}</span>
           o sistema pode rodar em um único servidor ou em vários servidores trabalhando juntos.

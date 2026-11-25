@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { ArrowUpRight, Check, Quote } from 'lucide-react';
 import { TimelineTrack } from '@/components/empresa/TimelineTrack';
 import { Reveal } from '@/components/ui/Reveal';
@@ -28,19 +29,38 @@ export default function EmpresaPage() {
       />
 
       <Section>
-        <Reveal>
-          <figure className="relative mx-auto max-w-4xl overflow-hidden rounded-2xl border border-border bg-surface p-8 shadow-xs sm:p-12">
-            <Quote
-              className="h-8 w-8 text-brand/25"
-              strokeWidth={1.5}
-              aria-hidden="true"
-            />
-            <blockquote className="mt-4 font-display text-2xl font-semibold leading-snug tracking-tight text-foreground sm:text-3xl">
-              “Um líder deve incentivar, motivar e sempre acreditar em seus liderados. Dessa forma
-              não teremos um grande líder e sim uma grande equipe formada por líderes.”
-            </blockquote>
-          </figure>
-        </Reveal>
+        <div className="grid items-center gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
+          <Reveal>
+            <figure className="relative overflow-hidden rounded-3xl border border-border bg-surface p-8 shadow-xs sm:p-10">
+              <Quote
+                className="h-8 w-8 text-brand/25"
+                strokeWidth={1.5}
+                aria-hidden="true"
+              />
+              <blockquote className="mt-4 font-display text-2xl font-semibold leading-snug tracking-tight text-foreground sm:text-3xl">
+                “Um líder deve incentivar, motivar e sempre acreditar em seus liderados. Dessa forma
+                não teremos um grande líder e sim uma grande equipe formada por líderes.”
+              </blockquote>
+            </figure>
+          </Reveal>
+
+          <Reveal delay={0.06}>
+            <div className="overflow-hidden rounded-3xl border border-border bg-[#F4F7FB] p-3 shadow-xs">
+              <Image
+                src="/images/servicos-datacenter.webp"
+                alt="Infraestrutura corporativa de servidores gerenciada com padrões open source pela CPU House"
+                width={1280}
+                height={714}
+                priority
+                sizes="(max-width: 1024px) 92vw, 520px"
+                className="h-auto w-full rounded-2xl object-cover"
+              />
+              <p className="mt-2.5 px-2 font-mono text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
+                ENGENHARIA DE INFRAESTRUTURA · DESDE 2007
+              </p>
+            </div>
+          </Reveal>
+        </div>
       </Section>
 
       <Section

@@ -66,7 +66,7 @@ export function WordReveal({
     <Tag ref={headingRef} className={className}>
       {words.map((word, idx) => (
         <Fragment key={`${word}-${idx}`}>
-          <span className="inline-block overflow-hidden align-bottom">
+          <span className="inline-block overflow-hidden pb-[0.14em] -mb-[0.14em] align-bottom">
             <span data-word className="inline-block will-change-transform">
               {word}
             </span>

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
-import { Activity } from 'lucide-react';
+import Image from 'next/image';
+import { Activity, CheckCircle2 } from 'lucide-react';
 import { Hero } from '@/components/home/Hero';
 import { SolutionsShowcase } from '@/components/home/SolutionsShowcase';
 import { CountUp } from '@/components/ui/CountUp';
@@ -48,26 +49,48 @@ export default function HomePage() {
           ))}
         </div>
 
-        <Reveal className="mt-10">
-          <div className="flex flex-col items-start justify-between gap-5 rounded-2xl border border-brand/25 bg-surface-tint p-6 sm:flex-row sm:items-center sm:px-8">
-            <div className="flex items-start gap-4">
-              <span
-                aria-hidden="true"
-                className="mt-0.5 hidden h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand text-brand-foreground sm:inline-flex"
-              >
-                <Activity className="h-5 w-5" strokeWidth={1.5} />
-              </span>
-              <div>
-                <p className="text-lg font-semibold text-foreground">Seu computador está lento?</p>
-                <p className="mt-1 text-muted-foreground">
-                  Prolongue a vida útil de seus computadores e trabalhe com maior rapidez. Conheça a
-                  preventiva corporativa CPU House.
-                </p>
+        <Reveal className="mt-12">
+          <div className="grid items-center gap-8 overflow-hidden rounded-3xl border border-border bg-surface p-6 shadow-[0_20px_50px_-28px_rgba(15,23,42,0.16)] sm:p-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10">
+            <div>
+              <div className="inline-flex items-center gap-2 rounded-full border border-brand/20 bg-surface-tint px-3 py-1 font-mono text-xs font-medium uppercase tracking-wider text-brand-ink">
+                <Activity className="h-3.5 w-3.5" strokeWidth={1.75} aria-hidden="true" />
+                Preventiva Corporativa
+              </div>
+              <h3 className="mt-4 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+                Seu parque de computadores está lento ou parando sem aviso?
+              </h3>
+              <p className="mt-3 text-base leading-relaxed text-muted-foreground">
+                Prolongue a vida útil de servidores e estações com inventário online, checklists
+                agendados e atuação preventiva antes que falhas gerem perda de dados e prejuízo.
+              </p>
+              <ul className="mt-5 grid gap-2.5 text-sm text-foreground sm:grid-cols-2">
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="h-4 w-4 shrink-0 text-brand-ink" aria-hidden="true" />
+                  <span>Inventário online de ativos e licenças</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="h-4 w-4 shrink-0 text-brand-ink" aria-hidden="true" />
+                  <span>Checklists periódicos em servidores</span>
+                </li>
+              </ul>
+              <div className="mt-7">
+                <ButtonLink href="/servicos/preventivas" variant="primary" arrow>
+                  Conhecer a preventiva
+                </ButtonLink>
               </div>
             </div>
-            <ButtonLink href="/servicos/preventivas" variant="secondary" arrow className="shrink-0">
-              Conhecer a preventiva
-            </ButtonLink>
+
+            <div className="overflow-hidden rounded-2xl border border-border bg-[#F4F7FB] p-2.5">
+              <Image
+                src="/images/servicos-datacenter.webp"
+                alt="Sala corporativa de servidores com cabeamento estruturado azul e infraestrutura gerenciada pela CPU House"
+                width={1280}
+                height={714}
+                loading="eager"
+                sizes="(max-width: 1024px) 92vw, 520px"
+                className="h-auto w-full rounded-xl object-cover"
+              />
+            </div>
           </div>
         </Reveal>
       </Section>

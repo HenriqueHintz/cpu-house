@@ -137,7 +137,7 @@ test.describe('Tier 1 — Feature 4: Reusable UI & Motion Primitives', () => {
     await scrollToPercentAndSettle(page, 100);
 
     await expect(page.getByText('Desde 2007').first()).toBeVisible();
-    await expect(page.getByText(/2\s+estados atendidos/i).first()).toBeVisible();
+    await expect(page.getByText(/18\+\s*anos de mercado/i).first()).toBeVisible();
     await expect(page.getByText(/100%\s+open source/i).first()).toBeVisible();
 
     await page.emulateMedia({ reducedMotion: 'reduce' });
@@ -146,7 +146,7 @@ test.describe('Tier 1 — Feature 4: Reusable UI & Motion Primitives', () => {
     await scrollToPercentAndSettle(page, 100);
 
     await expect(page.getByText(/2007/).first()).toBeVisible();
-    await expect(page.getByText(/estados atendidos/i).first()).toBeVisible();
+    await expect(page.getByText(/anos de mercado/i).first()).toBeVisible();
     await expect(page.getByText(/open source/i).first()).toBeVisible();
   });
 });
@@ -213,11 +213,12 @@ test.describe('Tier 1 — Feature 5: Hero 3D Isometric Vector Scene & SVGs', () 
   test('T1-F05-03: Hero vector loops animate normally and become static under prefers-reduced-motion', async ({
     page,
   }) => {
+    await page.emulateMedia({ reducedMotion: 'no-preference' });
     await page.goto('/');
     const animatedNormal = await page.evaluate(() => {
       const hero = document.querySelector('main section');
       if (!hero) return false;
-      const hidden = hero.querySelector('[aria-hidden="true"]');
+      const hidden = hero.querySelector('div[aria-hidden="true"]');
       if (!hidden) return false;
       const all = [hidden, ...Array.from(hidden.querySelectorAll('*'))];
       return all.some((el) => {
@@ -232,7 +233,7 @@ test.describe('Tier 1 — Feature 5: Hero 3D Isometric Vector Scene & SVGs', () 
 
     const reducedMetrics = await page.evaluate(() => {
       const hero = document.querySelector('main section');
-      const hidden = hero?.querySelector('[aria-hidden="true"]');
+      const hidden = hero?.querySelector('div[aria-hidden="true"]');
       const svg = hidden?.querySelector('svg');
       const svgBox = svg?.getBoundingClientRect();
       const all = hidden ? [hidden, ...Array.from(hidden.querySelectorAll('*'))] : [];
@@ -254,7 +255,7 @@ test.describe('Tier 1 — Feature 5: Hero 3D Isometric Vector Scene & SVGs', () 
     expect(reducedMetrics.activeAnimations).toBe(0);
   });
 
-  test('T1-F05-04: Home Soluções section renders 3 static isometric SVGs across its tabs', async ({ page }) => {
+  test('T1-F05-04: Home Soluções section renders 3 bespoke Gemini visual renders across its tabs', async ({ page }) => {
     await page.goto('/');
     const solSection = page.locator('#solucoes');
     await solSection.scrollIntoViewIfNeeded();
@@ -264,11 +265,11 @@ test.describe('Tier 1 — Feature 5: Hero 3D Isometric Vector Scene & SVGs', () 
 
     for (let i = 0; i < 3; i++) {
       await tabs.nth(i).click();
-      const activeSvg = solSection.locator('[aria-hidden="true"] svg').nth(i + 3);
-      const box = await activeSvg.boundingBox();
+      const activeImg = solSection.locator('[role="tabpanel"] img').nth(i);
+      const box = await activeImg.boundingBox();
       expect(box).not.toBeNull();
-      expect(box!.width).toBeGreaterThan(60);
-      expect(box!.height).toBeGreaterThan(60);
+      expect(box!.width).toBeGreaterThan(120);
+      expect(box!.height).toBeGreaterThan(80);
     }
   });
 
@@ -382,11 +383,11 @@ test.describe('Tier 1 — Feature 6: Home Page (/)', () => {
     await scrollToPercentAndSettle(page, 100);
 
     await expect(page.getByText('Desde 2007').first()).toBeVisible();
-    await expect(page.getByText(/2\s+estados atendidos/i).first()).toBeVisible();
+    await expect(page.getByText(/18\+\s*anos de mercado/i).first()).toBeVisible();
     await expect(page.getByText(/100%\s+open source/i).first()).toBeVisible();
 
     await expect(
-      page.getByText(/Entre em contato agora mesmo com nossos consultores/i).first()
+      page.getByText(/Fale com nossos consultores/i).first()
     ).toBeVisible();
     await expect(page.locator(`a[href*="${WHATSAPP_PHONE}"]`).first()).toBeVisible();
   });
@@ -430,7 +431,7 @@ test.describe('Tier 1 — Feature 7: Empresa Page (/empresa)', () => {
     const main = page.locator('main');
 
     await expect(main).toContainText('2007');
-    await expect(main).toContainText('1º de março de 2007');
+    await expect(main).toContainText('Fundação em 1º de março');
     await expect(main).toContainText('2014');
     await expect(main).toContainText(/consultoria em gestão/i);
     await expect(main).toContainText('2018');

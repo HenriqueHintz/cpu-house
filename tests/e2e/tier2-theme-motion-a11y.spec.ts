@@ -306,6 +306,7 @@ test.describe('Tier 2 — Feature 4 & 5: Motion, Sticky Table, Keyboard, SVGs & 
   }) => {
     await page.setViewportSize({ width: 1440, height: 900 });
     await page.goto('/');
+    await page.evaluate(() => document.fonts.ready);
 
     const h1 = page.getByRole('heading', { level: 1 });
     const before = await h1.boundingBox();
@@ -321,13 +322,13 @@ test.describe('Tier 2 — Feature 4 & 5: Motion, Sticky Table, Keyboard, SVGs & 
     await expectNoHorizontalOverflow(page, 'Hero parallax');
   });
 
-  test('T2-F05-05: SolutionIsometrics (3 SVGs) and ProxyFlowDiagram render non-zero accessible SVGs', async ({
+  test('T2-F05-05: Soluções Gemini images (3 renders) and ProxyFlowDiagram render non-zero accessible visuals', async ({
     page,
   }) => {
     await page.goto('/');
     const solSection = page.locator('#solucoes');
-    const solSvgs = solSection.locator('[aria-hidden="true"] svg');
-    expect(await solSvgs.count()).toBeGreaterThanOrEqual(3);
+    const solImgs = solSection.locator('[role="tabpanel"] img');
+    expect(await solImgs.count()).toBe(3);
 
     await page.goto('/produtos/proxy');
     const archSection = page
@@ -348,14 +349,14 @@ test.describe('Tier 2 — Features 6, 8, 10, 12: Counters, Images, Accordions & 
     await page.goto('/');
     await scrollToPercentAndSettle(page, 65 as unknown as 50);
     await expect(page.getByText('Desde 2007').first()).toBeVisible();
-    await expect(page.getByText(/2\s+estados atendidos/i).first()).toBeVisible();
+    await expect(page.getByText(/18\+\s*anos de mercado/i).first()).toBeVisible();
     await expect(page.getByText(/100%\s+open source/i).first()).toBeVisible();
 
     await page.emulateMedia({ reducedMotion: 'reduce' });
     await page.goto('/');
     await scrollToPercentAndSettle(page, 50);
     await expect(page.getByText('Desde 2007').first()).toBeVisible();
-    await expect(page.getByText(/2\s+estados atendidos/i).first()).toBeVisible();
+    await expect(page.getByText(/18\+\s*anos de mercado/i).first()).toBeVisible();
     await expect(page.getByText(/100%\s+open source/i).first()).toBeVisible();
   });
 
