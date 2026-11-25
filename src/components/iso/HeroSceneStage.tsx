@@ -132,11 +132,7 @@ export function HeroSceneStage() {
       )}
 
       {/* Interactive React Three Fiber Stage with guaranteed explicit height */}
-      <div
-        className={`absolute inset-0 z-10 transition-opacity duration-200 ${
-          ready3D ? 'opacity-100' : 'opacity-0'
-        }`}
-      >
+      <div className={`absolute inset-0 z-10 ${ready3D ? 'opacity-100' : 'opacity-0'}`}>
         <HeroCanvas3D scrollProgress={scrollProgress} onReady={() => setReady3D(true)} />
       </div>
 

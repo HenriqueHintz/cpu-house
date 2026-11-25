@@ -122,14 +122,17 @@ export function Section({
 }) {
   const toneClass =
     tone === 'alt'
-      ? 'bg-surface'
+      ? 'bg-background-alt'
       : tone === 'tint'
         ? 'bg-surface-tint'
         : 'bg-background';
 
   return (
-    <section id={id} className={`py-20 md:py-28 lg:py-32 ${toneClass} ${className}`}>
-      <div className="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
+    <section
+      id={id}
+      className={`flex min-h-[calc(100svh-72px)] flex-col justify-center py-16 md:py-20 ${toneClass} ${className}`}
+    >
+      <div className="mx-auto w-full max-w-[1200px] px-4 sm:px-6 lg:px-8">
         {(eyebrow || title || intro) && (
           <div className="mb-12 max-w-3xl md:mb-16">
             {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
@@ -165,12 +168,9 @@ export function PageHero({
   children?: ReactNode;
 }) {
   return (
-    <header className="relative overflow-hidden border-b border-border bg-background bg-tech-grid">
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-surface to-transparent"
-      />
-      <div className="relative mx-auto max-w-[1200px] px-4 py-16 sm:px-6 md:py-24 lg:px-8">
+    <header className="relative flex min-h-[60svh] items-center overflow-hidden border-b border-border bg-gradient-to-b from-[#CBE0EE] via-background to-[#C3DAEA]">
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-tech-grid" />
+      <div className="relative mx-auto w-full max-w-[1200px] px-4 py-16 sm:px-6 md:py-20 lg:px-8">
         <Eyebrow>{eyebrow}</Eyebrow>
         <WordReveal
           as="h1"
@@ -199,9 +199,9 @@ export function CtaBlock({
   href: string;
 }) {
   return (
-    <section className="bg-background py-20 md:py-28">
-      <div className="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
-        <Reveal className="relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 px-6 py-14 text-center text-white shadow-[0_24px_60px_-24px_rgba(11,79,108,0.45)] sm:px-12 md:py-20">
+    <section className="flex min-h-[70svh] flex-col justify-center bg-background py-16 md:py-20">
+      <div className="mx-auto w-full max-w-[1200px] px-4 sm:px-6 lg:px-8">
+        <Reveal className="relative overflow-hidden rounded-2xl border border-[#164E6B] bg-petroleum px-6 py-14 text-center text-white shadow-[0_24px_60px_-24px_rgba(7,40,57,0.6)] sm:px-12 md:py-20">
           <div
             aria-hidden="true"
             className="pointer-events-none absolute inset-0 opacity-30"
@@ -215,7 +215,7 @@ export function CtaBlock({
             <h2 className="mx-auto max-w-2xl text-3xl font-bold tracking-[-0.025em] sm:text-4xl">
               {title}
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-slate-300">{text}</p>
+            <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-[#C4DFEE]">{text}</p>
             <div className="mt-8 flex justify-center">
               <ButtonLink href={href} variant="onDark" external>
                 {label}

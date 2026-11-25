@@ -58,8 +58,8 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 h-[72px] border-b border-border/80 bg-background/85 backdrop-blur-md transition-shadow duration-200 ${
-        scrolled ? 'shadow-xs' : ''
+      className={`fixed inset-x-0 top-0 z-50 h-[72px] border-b border-border bg-[#CEE1EF]/90 backdrop-blur-md transition-shadow duration-200 ${
+        scrolled ? 'shadow-sm' : ''
       }`}
     >
       <div className="mx-auto flex h-full max-w-[1200px] items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">

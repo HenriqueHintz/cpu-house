@@ -1,32 +1,38 @@
 @import "tailwindcss";
 
 :root {
-  --background: #F7F8FA;
-  --surface: #FFFFFF;
-  --surface-elevated: #FFFFFF;
-  --surface-tint: #ECF4F8;
-  --foreground: #0F172A;
-  --muted: #EFF2F6;
-  --muted-foreground: #475569;
+  --background: #D6E6F2;
+  --background-alt: #C5DAEA;
+  --petroleum: #0B3C54;
+  --petroleum-deep: #072839;
+  --surface: #F2F8FC;
+  --surface-elevated: #F6FAFD;
+  --surface-tint: #DCEBF5;
+  --foreground: #091E2C;
+  --muted: #DCEAF4;
+  --muted-foreground: #244256;
   --brand: #0B4F6C;
   --brand-hover: #083B52;
   --brand-deep: #062838;
   --brand-foreground: #FFFFFF;
-  --brand-ink: #0B4F6C;
-  --secondary: #EFF2F6;
-  --secondary-foreground: #0F172A;
+  --brand-ink: #083E56;
+  --secondary: #DCEAF4;
+  --secondary-foreground: #091E2C;
   --accent: #22B8CF;
-  --accent-foreground: #0B1120;
-  --destructive: #DC2626;
+  --accent-foreground: #071E2B;
+  --destructive: #B91C1C;
   --destructive-foreground: #FFFFFF;
-  --border: #E2E8F0;
-  --border-strong: #CBD5E1;
-  --ring: #0B4F6C;
+  --border: #ACC7DD;
+  --border-strong: #8EB2CE;
+  --ring: #083E56;
   color-scheme: light;
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-background-alt: var(--background-alt);
+  --color-petroleum: var(--petroleum);
+  --color-petroleum-deep: var(--petroleum-deep);
   --color-surface: var(--surface);
   --color-surface-elevated: var(--surface-elevated);
   --color-surface-tint: var(--surface-tint);
@@ -55,15 +61,15 @@
 
 @layer base {
   html {
-    scroll-padding-top: 88px;
+    scroll-padding-top: 72px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    scrollbar-color: #CBD5E1 #F7F8FA;
+    scrollbar-color: #7FA7C4 #D6E6F2;
   }
 
   ::selection {
-    background-color: rgba(11, 79, 108, 0.16);
-    color: #0F172A;
+    background-color: rgba(11, 79, 108, 0.22);
+    color: #091E2C;
   }
 
   body {
@@ -92,13 +98,13 @@
 
 .bg-tech-grid {
   background-image:
-    linear-gradient(to right, rgba(11, 79, 108, 0.045) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(11, 79, 108, 0.045) 1px, transparent 1px);
+    linear-gradient(to right, rgba(9, 30, 44, 0.055) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(9, 30, 44, 0.055) 1px, transparent 1px);
   background-size: 40px 40px;
 }
 
 .bg-tech-dots {
-  background-image: radial-gradient(rgba(11, 79, 108, 0.12) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(9, 30, 44, 0.14) 1px, transparent 1px);
   background-size: 24px 24px;
 }
 
@@ -106,8 +112,8 @@
   position: relative;
   overflow: hidden;
   box-shadow:
-    0 1px 2px rgba(15, 23, 42, 0.04),
-    0 10px 28px -16px rgba(11, 79, 108, 0.12);
+    0 1px 2px rgba(9, 30, 44, 0.06),
+    0 14px 32px -18px rgba(8, 46, 66, 0.2);
 }
 
 .card-interactive::before {
@@ -119,7 +125,7 @@
   transition: opacity 220ms ease-out;
   background: radial-gradient(
     420px circle at var(--mx, 50%) var(--my, 0%),
-    rgba(34, 184, 207, 0.09),
+    rgba(34, 184, 207, 0.14),
     transparent 65%
   );
 }
@@ -144,17 +150,17 @@
 
 /* Isometric scene tokens */
 :root {
-  --iso-top: #A9DDEB;
-  --iso-left: #3F94B2;
-  --iso-right: #0B4F6C;
-  --iso-edge: rgba(255, 255, 255, 0.6);
-  --iso-slot: #07354A;
-  --iso-shadow: #0F172A;
+  --iso-top: #9BD3E6;
+  --iso-left: #3183A3;
+  --iso-right: #094560;
+  --iso-edge: rgba(242, 248, 252, 0.72);
+  --iso-slot: #052636;
+  --iso-shadow: #091E2C;
 }
 .iso-top { fill: var(--iso-top); stroke: var(--iso-edge); stroke-width: 1; stroke-linejoin: round; }
 .iso-left { fill: var(--iso-left); }
 .iso-right { fill: var(--iso-right); }
-.iso-grid { fill: none; stroke: var(--iso-left); stroke-width: 1; opacity: 0.35; }
+.iso-grid { fill: none; stroke: var(--iso-left); stroke-width: 1; opacity: 0.42; }
 
 @keyframes iso-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
 @keyframes iso-assemble { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }

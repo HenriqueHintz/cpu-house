@@ -250,17 +250,18 @@ test.describe('Tier 1 — Feature 5: Hero 3D Isometric Vector Scene & SVGs', () 
     expect(reducedMetrics.activeAnimations).toBe(0);
   });
 
-  test('T1-F05-04: Home Soluções section renders 3 static isometric SVGs', async ({ page }) => {
+  test('T1-F05-04: Home Soluções section renders 3 static isometric SVGs across its tabs', async ({ page }) => {
     await page.goto('/');
-    const solSection = page.locator('section').filter({ hasText: /NOSSAS SOLUÇÕES/i }).first();
+    const solSection = page.locator('#solucoes');
     await solSection.scrollIntoViewIfNeeded();
 
-    const svgs = solSection.locator('[aria-hidden="true"] svg');
-    const count = await svgs.count();
-    expect(count).toBeGreaterThanOrEqual(3);
+    const tabs = solSection.getByRole('tab');
+    expect(await tabs.count()).toBe(3);
 
     for (let i = 0; i < 3; i++) {
-      const box = await svgs.nth(i).boundingBox();
+      await tabs.nth(i).click();
+      const activeSvg = solSection.locator('[aria-hidden="true"] svg').nth(i + 3);
+      const box = await activeSvg.boundingBox();
       expect(box).not.toBeNull();
       expect(box!.width).toBeGreaterThan(60);
       expect(box!.height).toBeGreaterThan(60);

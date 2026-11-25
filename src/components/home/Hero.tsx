@@ -6,14 +6,15 @@ import { WHATSAPP } from '@/lib/data/content';
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden border-b border-border/80 bg-background bg-tech-grid">
+    <section className="relative flex min-h-[calc(100svh-72px)] items-center overflow-hidden border-b border-border bg-gradient-to-b from-[#CBE0EE] via-background to-[#C3DAEA]">
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-tech-grid" />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-surface via-transparent to-transparent"
+        className="pointer-events-none absolute -right-24 -top-24 h-[460px] w-[460px] rounded-full bg-brand/10 blur-3xl"
       />
-      <div className="relative mx-auto grid max-w-[1200px] items-center gap-8 px-4 pb-16 pt-8 sm:px-6 lg:grid-cols-[1.06fr_0.94fr] lg:gap-12 lg:px-8 lg:pb-24 lg:pt-14">
+      <div className="relative mx-auto grid w-full max-w-[1200px] items-center gap-6 px-4 py-8 sm:px-6 lg:grid-cols-[1.06fr_0.94fr] lg:gap-12 lg:px-8 lg:py-10">
         <div className="order-2 lg:order-1">
-          <div className="inline-flex items-center gap-2.5 rounded-full border border-border bg-surface px-3.5 py-1.5 shadow-2xs">
+          <div className="inline-flex items-center gap-2.5 rounded-full border border-border bg-surface/90 px-3.5 py-1.5 shadow-2xs">
             <ShieldCheck className="h-3.5 w-3.5 text-brand-ink" strokeWidth={1.75} aria-hidden="true" />
             <p className="font-mono text-xs font-medium uppercase tracking-wider text-brand-ink">
               CONSULTORIA E SOLUÇÕES EM TI · DESDE 2007
@@ -24,15 +25,15 @@ export function Hero() {
             as="h1"
             immediate
             text="Infraestrutura de TI segura, estável e sem surpresas."
-            className="mt-6 text-4xl font-bold leading-[1.06] tracking-[-0.03em] text-foreground sm:text-5xl lg:text-[56px]"
+            className="mt-5 text-[34px] font-bold leading-[1.06] tracking-[-0.03em] text-foreground sm:text-5xl lg:text-[54px]"
           />
 
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
+          <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
             Servidores, segurança, backup em nuvem e suporte pró-ativo com tecnologias open source
             consagradas, para sua equipe produzir mais e parar menos.
           </p>
 
-          <div className="mt-9 flex flex-wrap items-center gap-x-7 gap-y-4">
+          <div className="mt-7 flex flex-wrap items-center gap-x-7 gap-y-4">
             <ButtonLink href={WHATSAPP} external>
               Agendar consultoria
             </ButtonLink>

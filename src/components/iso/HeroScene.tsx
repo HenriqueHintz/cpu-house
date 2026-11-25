@@ -76,7 +76,7 @@ export function HeroScene() {
   }, [rx, ry]);
 
   return (
-    <div ref={wrapRef} aria-hidden="true" className="mx-auto w-full max-w-[340px] sm:max-w-[460px] lg:max-w-[560px]">
+    <div ref={wrapRef} aria-hidden="true" className="mx-auto w-full max-w-[230px] sm:max-w-[400px] lg:max-w-[520px]">
       <div style={{ perspective: '1200px' }}>
         <motion.div
           ref={sceneRef}
