@@ -106,15 +106,15 @@ export default function PreventivasPage() {
         intro="A Preventiva Corporativa levanta os dados do parque computacional e compara os resultados com uma base de fatores de risco. Nossos técnicos criam um checklist detalhado sobre:"
       >
         <Reveal className="mb-8">
-          <div className="overflow-hidden rounded-3xl border border-border bg-[#F4F7FB] p-3 shadow-xs">
+          <div className="overflow-hidden rounded-2xl">
             <Image
-              src="/images/servicos-datacenter.webp"
-              alt="Racks de servidores corporativos inspecionados na rotina de manutenção preventiva da CPU House"
-              width={1280}
-              height={714}
+              src="/images/preventiva-diagnostico.webp"
+              alt="Especialista realizando manutenção preventiva e diagnóstico técnico em hardware de servidor corporativo"
+              width={1200}
+              height={670}
               priority
               sizes="(max-width: 1200px) 94vw, 1140px"
-              className="max-h-[420px] w-full rounded-2xl object-cover"
+              className="block max-h-[440px] w-full object-cover object-center"
             />
           </div>
         </Reveal>

@@ -50,9 +50,9 @@ export default function HomePage() {
         </div>
 
         <Reveal className="mt-12">
-          <div className="grid items-center gap-8 overflow-hidden rounded-3xl border border-border bg-surface p-6 shadow-[0_20px_50px_-28px_rgba(15,23,42,0.16)] sm:p-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10">
-            <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-brand/20 bg-surface-tint px-3 py-1 font-mono text-xs font-medium uppercase tracking-wider text-brand-ink">
+          <div className="grid items-stretch overflow-hidden rounded-3xl border border-border bg-surface shadow-[0_20px_50px_-28px_rgba(15,23,42,0.16)] lg:grid-cols-[1.06fr_0.94fr]">
+            <div className="flex flex-col justify-center p-6 sm:p-9 lg:p-11">
+              <div className="inline-flex w-fit items-center gap-2 rounded-full border border-brand/20 bg-surface-tint px-3 py-1 font-mono text-xs font-medium uppercase tracking-wider text-brand-ink">
                 <Activity className="h-3.5 w-3.5" strokeWidth={1.75} aria-hidden="true" />
                 Preventiva Corporativa
               </div>
@@ -80,15 +80,15 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="overflow-hidden rounded-2xl border border-border bg-[#F4F7FB] p-2.5">
+            <div className="min-h-[260px] overflow-hidden border-t border-border bg-slate-100 sm:min-h-[320px] lg:min-h-full lg:border-t-0 lg:border-l">
               <Image
-                src="/images/servicos-datacenter.webp"
-                alt="Sala corporativa de servidores com cabeamento estruturado azul e infraestrutura gerenciada pela CPU House"
-                width={1280}
-                height={714}
+                src="/images/preventiva-diagnostico.webp"
+                alt="Especialista realizando manutenção preventiva e diagnóstico técnico em hardware de servidor corporativo"
+                width={1200}
+                height={670}
                 loading="eager"
-                sizes="(max-width: 1024px) 92vw, 520px"
-                className="h-auto w-full rounded-xl object-cover"
+                sizes="(max-width: 1024px) 100vw, 560px"
+                className="h-full w-full object-cover object-center transition-transform duration-500 hover:scale-[1.02]"
               />
             </div>
           </div>

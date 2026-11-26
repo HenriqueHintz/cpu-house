@@ -305,8 +305,9 @@ test.describe('Tier 2 — Feature 4 & 5: Motion, Sticky Table, Keyboard, SVGs & 
     page,
   }) => {
     await page.setViewportSize({ width: 1440, height: 900 });
-    await page.goto('/');
+    await page.goto('/', { waitUntil: 'networkidle' });
     await page.evaluate(() => document.fonts.ready);
+    await page.waitForTimeout(800);
 
     const h1 = page.getByRole('heading', { level: 1 });
     const before = await h1.boundingBox();

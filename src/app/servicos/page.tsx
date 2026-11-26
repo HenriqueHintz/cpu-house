@@ -31,8 +31,8 @@ export default function ServicosPage() {
 
       <Section tone="alt" className="border-b border-border !py-12 md:!py-16">
         <Reveal>
-          <div className="grid items-center gap-8 rounded-3xl border border-border bg-surface p-6 shadow-xs sm:p-8 lg:grid-cols-[0.95fr_1.05fr] lg:gap-12">
-            <div>
+          <div className="grid items-stretch overflow-hidden rounded-3xl border border-border bg-surface shadow-xs lg:grid-cols-[0.95fr_1.05fr]">
+            <div className="flex flex-col justify-center p-6 sm:p-9 lg:p-11">
               <Eyebrow>Padrão Corporativo</Eyebrow>
               <h2 className="mt-3 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
                 Infraestrutura organizada, documentada e monitorada
@@ -52,15 +52,15 @@ export default function ServicosPage() {
                 </li>
               </ul>
             </div>
-            <div className="overflow-hidden rounded-2xl border border-border bg-[#F4F7FB] p-2.5">
+            <div className="min-h-[260px] overflow-hidden border-t border-border bg-slate-100 sm:min-h-[320px] lg:min-h-full lg:border-t-0 lg:border-l">
               <Image
                 src="/images/servicos-datacenter.webp"
                 alt="Racks de servidores corporativos com cabeamento estruturado azul em ambiente técnico climatizado"
                 width={1280}
                 height={714}
                 priority
-                sizes="(max-width: 1024px) 92vw, 560px"
-                className="h-auto w-full rounded-xl object-cover"
+                sizes="(max-width: 1024px) 100vw, 600px"
+                className="h-full w-full object-cover object-center"
               />
             </div>
           </div>

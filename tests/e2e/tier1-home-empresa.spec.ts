@@ -255,7 +255,7 @@ test.describe('Tier 1 — Feature 5: Hero 3D Isometric Vector Scene & SVGs', () 
     expect(reducedMetrics.activeAnimations).toBe(0);
   });
 
-  test('T1-F05-04: Home Soluções section renders 3 bespoke Gemini visual renders across its tabs', async ({ page }) => {
+  test('T1-F05-04: Home Soluções section renders 3 realistic documentary renders across its tabs', async ({ page }) => {
     await page.goto('/');
     const solSection = page.locator('#solucoes');
     await solSection.scrollIntoViewIfNeeded();

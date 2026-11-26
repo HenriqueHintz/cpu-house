@@ -98,9 +98,9 @@ export function SolutionsShowcase() {
           id={`panel-${current.id}`}
           role="tabpanel"
           aria-labelledby={`tab-${current.id}`}
-          className="mt-5 grid items-center gap-8 rounded-2xl border border-[#2A6B8C] bg-surface p-6 shadow-[0_24px_56px_-28px_rgba(0,0,0,0.55)] sm:p-8 lg:grid-cols-[1.04fr_0.96fr] lg:gap-12"
+          className="mt-5 grid items-stretch overflow-hidden rounded-3xl border border-[#2A6B8C] bg-surface shadow-[0_24px_56px_-28px_rgba(0,0,0,0.55)] lg:grid-cols-[1.04fr_0.96fr]"
         >
-          <div>
+          <div className="flex flex-col justify-center p-6 sm:p-9 lg:p-11">
             <Eyebrow>{current.tag}</Eyebrow>
             <h3 className="mt-3 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
               {current.title}
@@ -132,34 +132,26 @@ export function SolutionsShowcase() {
             </div>
           </div>
 
-          <div className="overflow-hidden rounded-2xl border border-border bg-[#F4F7FB] p-3 shadow-xs sm:p-4">
-            <div className="mb-2.5 flex items-center justify-between px-1 font-mono text-[10px] font-medium uppercase tracking-wider text-brand-ink sm:text-[11px]">
-              <span>{current.specLabel}</span>
-              <span className="text-muted-foreground">ARQUITETURA</span>
-            </div>
-            <div className="grid place-items-center overflow-hidden rounded-xl border border-border/70 bg-white">
-              {SOLUTIONS.map((sol, idx) => (
-                <div
-                  key={sol.id}
-                  aria-hidden={idx !== activeIdx}
-                  className={`col-start-1 row-start-1 w-full transition-all duration-300 ${
-                    idx === activeIdx
-                      ? 'scale-100 opacity-100'
-                      : 'pointer-events-none scale-[0.98] opacity-0'
-                  }`}
-                >
-                  <Image
-                    src={sol.image}
-                    alt={sol.imageAlt}
-                    width={1000}
-                    height={747}
-                    loading="eager"
-                    sizes="(max-width: 1024px) 92vw, 480px"
-                    className="h-auto w-full object-cover"
-                  />
-                </div>
-              ))}
-            </div>
+          <div className="grid min-h-[260px] overflow-hidden border-t border-border bg-slate-900 sm:min-h-[340px] lg:min-h-[420px] lg:border-t-0 lg:border-l">
+            {SOLUTIONS.map((sol, idx) => (
+              <div
+                key={sol.id}
+                aria-hidden={idx !== activeIdx}
+                className={`col-start-1 row-start-1 h-full w-full transition-opacity duration-300 ${
+                  idx === activeIdx ? 'opacity-100' : 'pointer-events-none opacity-0'
+                }`}
+              >
+                <Image
+                  src={sol.image}
+                  alt={sol.imageAlt}
+                  width={1080}
+                  height={806}
+                  loading="eager"
+                  sizes="(max-width: 1024px) 100vw, 580px"
+                  className="h-full w-full object-cover object-center"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </div>

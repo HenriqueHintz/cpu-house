@@ -29,9 +29,9 @@ export default function EmpresaPage() {
       />
 
       <Section>
-        <div className="grid items-center gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
+        <div className="grid items-stretch gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10">
           <Reveal>
-            <figure className="relative overflow-hidden rounded-3xl border border-border bg-surface p-8 shadow-xs sm:p-10">
+            <figure className="relative flex h-full flex-col justify-center overflow-hidden rounded-3xl border border-border bg-surface p-8 shadow-xs sm:p-10">
               <Quote
                 className="h-8 w-8 text-brand/25"
                 strokeWidth={1.5}
@@ -45,19 +45,16 @@ export default function EmpresaPage() {
           </Reveal>
 
           <Reveal delay={0.06}>
-            <div className="overflow-hidden rounded-3xl border border-border bg-[#F4F7FB] p-3 shadow-xs">
+            <div className="h-full overflow-hidden rounded-3xl">
               <Image
                 src="/images/servicos-datacenter.webp"
                 alt="Infraestrutura corporativa de servidores gerenciada com padrões open source pela CPU House"
                 width={1280}
                 height={714}
                 priority
-                sizes="(max-width: 1024px) 92vw, 520px"
-                className="h-auto w-full rounded-2xl object-cover"
+                sizes="(max-width: 1024px) 92vw, 540px"
+                className="block h-full min-h-[260px] w-full object-cover object-center"
               />
-              <p className="mt-2.5 px-2 font-mono text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
-                ENGENHARIA DE INFRAESTRUTURA · DESDE 2007
-              </p>
             </div>
           </Reveal>
         </div>

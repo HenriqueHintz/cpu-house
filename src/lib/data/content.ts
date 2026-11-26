@@ -79,7 +79,6 @@ export interface Solution {
   tech?: string[];
   image: string;
   imageAlt: string;
-  specLabel: string;
   href: string;
   external?: boolean;
 }
@@ -92,10 +91,9 @@ export const SOLUTIONS: Solution[] = [
     title: 'Controle de acesso à web',
     text: 'Acesso consciente aos recursos computacionais é fundamental para a produtividade da sua equipe. Tenha controle do que pode ser acessado: sites da Internet, compartilhamentos ou serviços de rede. Bloqueie sites indevidos, priorize a banda necessária para cada serviço e otimize a velocidade de navegação.',
     tech: ['Squid', 'SquidGuard', 'DansGuardian'],
-    image: '/images/sol-seguranca.webp',
+    image: '/images/sol-firewall-fibra.webp',
     imageAlt:
-      'Gateway de segurança corporativa filtrando tráfego de rede para estações de trabalho',
-    specLabel: 'SQUID · SQUIDGUARD · FIREWALL',
+      'Appliance de firewall corporativo 1U e patch panel Gigabit com cabos azuis estruturados e transceptores de fibra óptica',
     href: '/produtos/proxy',
   },
   {
@@ -105,10 +103,9 @@ export const SOLUTIONS: Solution[] = [
     title: 'Seus dados disponíveis e íntegros',
     text: 'Não fique vulnerável a calamidades e reveses. Com o backup em nuvem você garante a disponibilidade e a integridade das suas informações de forma segura e simplificada, com criptografia e de acordo com a LGPD. E tudo isso de forma transparente.',
     tech: ['Criptografia', 'LGPD'],
-    image: '/images/sol-backup.webp',
+    image: '/images/sol-backup-vault.webp',
     imageAlt:
-      'Servidores corporativos conectados por canais criptografados a cofre de backup em nuvem em conformidade com a LGPD',
-    specLabel: 'CRIPTOGRAFIA PONTA A PONTA · LGPD',
+      'Corredor de armazenamento corporativo com racks protegidos por trava de aço e gavetas de discos de alta disponibilidade para backup LGPD',
     href: '/contato',
   },
   {
@@ -118,10 +115,9 @@ export const SOLUTIONS: Solution[] = [
     title: 'Gestão integrada de municípios',
     text: 'O e-cidade informatiza a gestão dos municípios brasileiros de forma integrada, contemplando Prefeitura, Câmara, autarquias, fundações e outros entes. Além da economia de recursos, oferece liberdade de escolha de fornecedores e garantia de continuidade, por ser software público apoiado pelo Ministério do Planejamento.',
     tech: ['Software público'],
-    image: '/images/sol-ecidade.webp',
+    image: '/images/sol-ecidade-operacao.webp',
     imageAlt:
-      'Maquete arquitetônica de prédios públicos municipais interligados por fibra óptica no sistema e-Cidade',
-    specLabel: 'GESTÃO PÚBLICA INTEGRADA',
+      'Estação de gestão pública municipal moderna com arquitetura iluminada por luz natural e ambiente operacional para o sistema e-Cidade',
     href: 'https://ecidade.softwarepublico.org/',
     external: true,
   },
